@@ -17,7 +17,33 @@ Open <http://localhost:1313/>. Content, uploaded files, and theme assets are alr
 hugo --gc --minify
 ```
 
-Deploy the generated `public/` directory to a static web host. `hugo.toml` sets the canonical site URL to `https://apeecmacg.org/`; use `hugo --baseURL https://your-host.example/` for a different deployment. The host must serve directory `index.html` files and use `404.html` for missing routes. Hosting and DNS have not been changed.
+Deploy the generated `public/` directory to a static web host. `hugo.toml` sets the canonical site URL to `https://apeecmacg.org/`; use `hugo --baseURL https://your-host.example/` for a different deployment. The host must serve directory `index.html` files and use `404.html` for missing routes. The GitHub Actions workflow below builds and publishes the site to GitHub Pages.
+
+## Publishing to GitHub Pages
+
+[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) builds with Hugo 0.168.0, validates the imported content and local links, uploads `public/`, and deploys it using GitHub's Pages actions. It runs on pushes to `main` or manually from **Actions → Publish to GitHub Pages → Run workflow** on `main`. Deployment runs are serialized. No SSH keys, VPS account, original ZIP, or deployment secrets are required.
+
+To activate:
+
+1. Open [repository Settings → Pages](https://github.com/dgomes/apeecmacg.org/settings/pages).
+2. Under **Build and deployment → Source**, select **GitHub Actions**. The workflow is already provided; skip GitHub's suggested templates.
+3. Under **Custom domain**, enter `apeecmacg.org` and save it.
+4. At the DNS provider, point the apex domain (`@`) to GitHub Pages using these four `A` records:
+
+   ```text
+   185.199.108.153
+   185.199.109.153
+   185.199.110.153
+   185.199.111.153
+   ```
+
+   Replace the old website's conflicting address records. If `AAAA` records are present, update them to GitHub Pages IPv6 addresses or remove stale ones. For `www`, add a `CNAME` record pointing to `dgomes.github.io` (without the repository name).
+5. Commit and push the workflow and documentation to `main`, then monitor **Actions → Publish to GitHub Pages**.
+6. Once GitHub's DNS check and certificate provisioning complete, enable **Enforce HTTPS** in the Pages settings.
+
+The workflow retains `https://apeecmacg.org/` as the canonical URL in `hugo.toml`. Configure this custom domain before using the deployed site: the archive contains root-relative links and media paths, so the default project address `https://dgomes.github.io/apeecmacg.org/` is not supported by this configuration. An Actions deployment does not need a `CNAME` file; the domain is managed in Pages settings. DNS and repository settings are not changed by editing these files.
+
+See [GitHub's publishing-source instructions](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) and [custom-domain instructions](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site).
 
 ## Editing
 

@@ -1,0 +1,76 @@
+name: Publish to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      HUGO_VERSION: '0.168.0'
+      TZ: Europe/Lisbon
+      HUGO_ENVIRONMENT: production
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v6
+
+      - name: Install Hugo
+        run: |
+          archive="hugo_${HUGO_VERSION}_linux-amd64.tar.gz"
+          release="https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}"
+          cd "$RUNNER_TEMP"
+          curl --fail --silent --show-error --location --output "$archive" "$release/$archive"
+          curl --fail --silent --show-error --location --output checksums.txt "$release/hugo_${HUGO_VERSION}_checksums.txt"
+          awk -v filename="$archive" '$2 == filename {print}' checksums.txt > selected-checksum.txt
+          test -s selected-checksum.txt
+          sha256sum --check selected-checksum.txt
+          tar -xzf "$archive" hugo
+          sudo install -m 0755 hugo /usr/local/bin/hugo
+          hugo version
+
+      - name: Build website
+        # Archived links require the custom domain configured in hugo.toml.
+        run: hugo --gc --minify --destination public
+
+      - name: Validate website
+        run: python3 scripts/validate.py public
+
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
