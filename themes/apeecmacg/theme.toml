@@ -1,0 +1,6 @@
+name = 'apeecmacg'
+license = 'MIT'
+description = 'A responsive Hugo theme inspired by the APEECMACG association’s original website.'
+min_version = '0.168.0'
+[author]
+  name = 'APEECMACG contributors'

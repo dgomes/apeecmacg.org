@@ -1,0 +1,13 @@
+{{ define "main" }}
+<article class="single-entry">
+  {{ if .Params.guide }}<a class="back-link" href="{{ "informacoes-uteis/" | relURL }}">← Informações úteis</a>{{ end }}
+  {{ if eq .Type "posts" }}{{ if in .Params.category "Classificados" }}<a class="back-link" href="{{ "category/classificados/" | relURL }}">← Todos os classificados</a>{{ else }}<a class="back-link" href="{{ "blog/" | relURL }}">← Todas as novidades</a>{{ end }}{{ end }}
+  <header><h1 class="entry-title">{{ .Title }}</h1>
+    {{ if eq .Type "posts" }}<div class="single-meta"><time datetime="{{ .Date.Format `2006-01-02` }}">{{ partial "date.html" .Date }}</time>{{ range .GetTerms "author" }}<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}{{ range .GetTerms "category" }}<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}</div>{{ end }}
+  </header>
+  <div class="entry-content">{{ .Content }}</div>
+  {{ if or .Params.guide .Params.guide_index }}{{ partial "guide-navigation.html" . }}{{ end }}
+  {{ if eq .RelPermalink "/classificados/" }}<p><a class="read-more" href="{{ "category/classificados/" | relURL }}">Ver todos os classificados →</a></p>{{ end }}
+  {{ if eq .Type "posts" }}<nav class="post-navigation" aria-label="Outras publicações">{{ $related := partial "news-pages.html" . }}{{ if in .Params.category "Classificados" }}{{ $related = (where site.RegularPages "Params.category" "intersect" (slice "Classificados")).ByDate.Reverse }}{{ end }}{{ with $related.Prev . }}<a href="{{ .RelPermalink }}"><span>Mais recente</span>{{ .Title }}</a>{{ end }}{{ with $related.Next . }}<a href="{{ .RelPermalink }}"><span>Anterior</span>{{ .Title }}</a>{{ end }}</nav>{{ end }}
+</article>
+{{ end }}

@@ -1,0 +1,57 @@
+baseURL = 'https://apeecmacg.org/'
+locale = 'pt-PT'
+defaultContentLanguage = 'pt'
+title = 'Associação de Pais e Enc. Educação do Conservatório de Música de Aveiro'
+theme = 'apeecmacg'
+timeZone = 'Europe/Lisbon'
+summaryLength = 45
+enableRobotsTXT = true
+
+[pagination]
+  pagerSize = 10
+[taxonomies]
+  category = 'category'
+  author = 'author'
+  tag = 'tags'
+[outputs]
+  home = ['HTML', 'RSS', 'JSON']
+[outputFormats.RSS]
+  baseName = 'index'
+  path = 'feed'
+[markup.goldmark.renderer]
+  unsafe = true
+[params]
+  shortTitle = 'APEECMACG'
+  description = 'Associação de Pais e Encarregados de Educação do Conservatório de Música de Aveiro Calouste Gulbenkian.'
+  logo = '/images/apeecmacg.jpg'
+  email = 'direccao@apeecmacg.org'
+  facebook = 'https://www.facebook.com/Apeecmacg/'
+
+[[menus.main]]
+  name = 'Início'
+  url = '/'
+  weight = 10
+[[menus.main]]
+  name = 'Novidades'
+  url = '/blog/'
+  weight = 20
+[[menus.main]]
+  name = 'Sobre nós'
+  url = '/about/'
+  weight = 30
+[[menus.main]]
+  name = 'Contactos'
+  url = '/contact/'
+  weight = 40
+[[menus.main]]
+  name = 'Classificados'
+  url = '/category/classificados/'
+  weight = 50
+[[menus.main]]
+  name = 'Informações úteis'
+  url = '/informacoes-uteis/'
+  weight = 60
+
+# Imported HTML is trusted editorial content from the local archive.
+[security]
+  allowContent = ['text/html', 'text/markdown']

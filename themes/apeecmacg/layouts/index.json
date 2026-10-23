@@ -1,0 +1,7 @@
+{{- $items := slice -}}
+{{- range site.Pages -}}
+  {{- if and (in (slice "posts" "pages") .Type) (or .IsPage .Params.guide_index) -}}
+    {{- $items = $items | append (dict "title" .Title "url" .RelPermalink "content" .Plain "date" (.Date.Format "2006-01-02")) -}}
+  {{- end -}}
+{{- end -}}
+{{- $items | jsonify -}}

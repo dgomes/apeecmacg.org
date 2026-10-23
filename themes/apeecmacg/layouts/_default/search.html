@@ -1,0 +1,8 @@
+{{ define "main" }}
+<div class="single-entry">
+  <h1 class="entry-title">Pesquisa</h1>
+  <form class="main-search" action="{{ .RelPermalink }}" role="search"><label for="query">Pesquisar nas páginas e publicações</label><div class="search-field"><input id="query" type="search" name="q" placeholder="O que procura?" required><button type="submit">Pesquisar</button></div></form>
+  <div id="search-results" data-index="{{ "index.json" | relURL }}" aria-live="polite"><p>Escreva uma palavra ou expressão para pesquisar.</p></div>
+  <noscript><p>A pesquisa precisa de JavaScript. Pode consultar todas as <a href="{{ "blog/" | relURL }}">novidades</a> ou usar o menu para encontrar informação.</p></noscript>
+</div>
+{{ end }}

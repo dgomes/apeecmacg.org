@@ -1,0 +1,11 @@
+<header class="site-header">
+  <div class="header-top">
+    <a class="wordmark" href="{{ site.Home.RelPermalink }}" aria-label="{{ site.Title }} — início">{{ site.Params.shortTitle }}</a>
+    <nav aria-label="Menu principal">
+      <ul class="menu">{{ range site.Menus.main }}
+        <li><a href="{{ .URL | relURL }}"{{ if eq $.RelPermalink .URL }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
+      {{ end }}</ul>
+    </nav>
+  </div>
+  <a class="header-logo" href="{{ site.Home.RelPermalink }}"><img src="{{ site.Params.logo | relURL }}" width="800" height="219" alt="{{ site.Title }}" fetchpriority="high"></a>
+</header>

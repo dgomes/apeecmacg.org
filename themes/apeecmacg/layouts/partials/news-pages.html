@@ -1,0 +1,3 @@
+{{- $posts := where site.RegularPages "Type" "posts" -}}
+{{- $classifieds := where $posts "Params.category" "intersect" (slice "Classificados") -}}
+{{- return ($posts | complement $classifieds).ByDate.Reverse -}}

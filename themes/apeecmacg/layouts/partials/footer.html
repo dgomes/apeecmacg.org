@@ -1,0 +1,4 @@
+<footer class="site-footer">
+  <nav aria-label="Menu do rodapé"><ul class="menu">{{ range site.Menus.main }}<li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>{{ end }}</ul></nav>
+  <div class="footer-bottom"><p>{{ site.Title }}</p><div class="social-links">{{ with site.Params.facebook }}<a href="{{ . }}">Facebook ↗</a>{{ end }}{{ with site.Params.email }}<a href="mailto:{{ . }}">Email ↗</a>{{ end }}<a href="{{ "feed/index.xml" | relURL }}">RSS</a></div></div>
+</footer>

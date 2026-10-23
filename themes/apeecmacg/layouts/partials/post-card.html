@@ -1,0 +1,18 @@
+<article class="post-preview">
+  <header>
+    <p class="eyebrow">{{ if in .Params.category "Classificados" }}Classificados{{ else }}Vida da associação{{ end }}</p>
+    <h2 class="entry-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+  </header>
+  <div class="post-layout">
+    <div class="entry-meta">
+      <time datetime="{{ .Date.Format `2006-01-02` }}">{{ partial "date.html" .Date }}</time>
+      {{ range .GetTerms "author" }}<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}
+      {{ range .GetTerms "category" }}<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}
+    </div>
+    <div class="entry-excerpt">
+      {{ with .Params.image }}<a class="preview-image" href="{{ $.RelPermalink }}" tabindex="-1" aria-hidden="true"><img src="{{ . | relURL }}" alt="" loading="lazy" decoding="async"></a>{{ end }}
+      <p>{{ .Plain | truncate 360 }}</p>
+      <a class="read-more" href="{{ .RelPermalink }}">Continuar a ler<span class="visually-hidden">: {{ .Title }}</span> <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</article>

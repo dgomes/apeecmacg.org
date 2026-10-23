@@ -1,0 +1,12 @@
+{{ define "main" }}
+  <div class="section-heading"><h1>{{ .Title }}</h1><span>{{ if .IsSection }}Arquivo de publicações{{ else }}A nossa comunidade{{ end }}</span></div>
+  {{ with .Content }}<div class="entry-content list-intro">{{ . }}</div>{{ end }}
+  {{ if and (eq .Kind "term") (eq .Title "Classificados") }}
+    {{ with site.GetPage "/pages/131" }}<div class="entry-content list-intro">{{ .Content }}</div>{{ end }}
+  {{ end }}
+  {{ $pages := .RegularPages }}
+  {{ if eq .Type "posts" }}{{ $pages = partial "news-pages.html" . }}{{ end }}
+  {{ $pager := .Paginate $pages.ByDate.Reverse }}
+  {{ range $pager.Pages }}{{ partial "post-card.html" . }}{{ end }}
+  {{ partial "pagination.html" $pager }}
+{{ end }}

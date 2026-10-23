@@ -1,0 +1,16 @@
+{{ define "main" }}
+  <section class="home-intro" aria-labelledby="welcome-title">
+    <p class="eyebrow">A nossa comunidade</p>
+    <h1 id="welcome-title" class="entry-title">Bem-vindos à APEECMACG</h1>
+    <p>{{ site.Params.description }}</p>
+    <nav class="topic-grid" aria-label="Conheça a associação">
+      {{ range site.Home.Params.shortcuts }}
+        <a class="topic-card" href="{{ .url | relURL }}">{{ with .icon }}<span class="topic-icon" aria-hidden="true">{{ . }}</span>{{ end }}<h2>{{ .title }}</h2><p>{{ .description }}</p><span aria-hidden="true">→</span></a>
+      {{ end }}
+    </nav>
+  </section>
+  <section aria-labelledby="latest-title">
+    <div class="section-heading"><h2 id="latest-title">Últimas novidades</h2><a href="{{ "blog/" | relURL }}">Ver todas →</a></div>
+    {{ range first 3 (partial "news-pages.html" .) }}{{ partial "post-card.html" . }}{{ end }}
+  </section>
+{{ end }}

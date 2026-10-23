@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "historia",
+    "title": "História do Conservatório",
+    "start": "Resumo do Historial da Escola",
+    "description": "A origem e o percurso do Conservatório de Música de Aveiro.",
+    "weight": 60,
+    "icon": "🏛️"
+  },
+  {
+    "slug": "legislacao",
+    "title": "Legislação",
+    "start": "Legislação importante",
+    "description": "Diplomas sobre os cursos de música e dança, o seguro escolar e o estatuto do aluno.",
+    "weight": 50,
+    "icon": "⚖️"
+  },
+  {
+    "slug": "contactos-e-servicos",
+    "title": "Contactos e serviços escolares",
+    "start": "Contactos",
+    "description": "Contactos do Conservatório e horário dos Serviços de Administração Escolar.",
+    "weight": 10,
+    "icon": "☎️"
+  },
+  {
+    "slug": "regulamento-e-seguro",
+    "title": "Regulamento interno e seguro escolar",
+    "start": "Regulamento Interno",
+    "description": "Regulamento interno, documento para consulta e informação sobre o seguro escolar.",
+    "weight": 40,
+    "icon": "🛡️"
+  },
+  {
+    "slug": "correio-institucional",
+    "title": "Correio institucional",
+    "start": "Forma privilegiada de contacto",
+    "description": "Conta de correio dos alunos, primeiro acesso e siglas dos instrumentos.",
+    "weight": 20,
+    "icon": "📧"
+  },
+  {
+    "slug": "cartao-escolar",
+    "title": "Cartão escolar",
+    "start": "Cartão Escolar",
+    "description": "Utilização do cartão no acesso à escola e na aquisição de bens e serviços.",
+    "weight": 30,
+    "icon": "🪪"
+  }
+]

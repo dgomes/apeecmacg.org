@@ -1,0 +1,15 @@
+{{ if .Params.guide_index }}
+  <nav class="topic-grid" aria-label="Temas das informações úteis">
+    {{ range sort hugo.Data.useful_information "weight" }}
+      <a class="topic-card" href="{{ printf "informacoes-uteis/%s/" .slug | relURL }}">{{ with .icon }}<span class="topic-icon" aria-hidden="true">{{ . }}</span>{{ end }}<h2>{{ .title }}</h2><p>{{ .description }}</p><span aria-hidden="true">→</span></a>
+    {{ end }}
+  </nav>
+{{ else }}
+  <nav class="guide-navigation" aria-label="Outros temas das informações úteis">
+    <h2>Informações úteis</h2>
+    <ul>{{ range sort hugo.Data.useful_information "weight" }}
+      {{ $url := printf "/informacoes-uteis/%s/" .slug }}
+      <li><a href="{{ $url | relURL }}"{{ if eq $.RelPermalink $url }} aria-current="page"{{ end }}>{{ .title }}</a></li>
+    {{ end }}</ul>
+  </nav>
+{{ end }}

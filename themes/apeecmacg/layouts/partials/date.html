@@ -1,0 +1,1 @@
+{{ $months := slice "janeiro" "fevereiro" "março" "abril" "maio" "junho" "julho" "agosto" "setembro" "outubro" "novembro" "dezembro" }}{{ .Day }} de {{ index $months (sub (int .Month) 1) }} de {{ .Year }}

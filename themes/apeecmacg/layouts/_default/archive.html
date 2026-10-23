@@ -1,0 +1,7 @@
+{{ define "main" }}
+  <div class="section-heading"><h1>{{ .Title }}</h1></div>
+  {{ $prefix := printf "/%s/" .Params.archive_prefix }}
+  {{ $pages := slice }}
+  {{ range where site.RegularPages "Type" "posts" }}{{ if hasPrefix .RelPermalink $prefix }}{{ $pages = $pages | append . }}{{ end }}{{ end }}
+  {{ range $pages }}{{ partial "post-card.html" . }}{{ end }}
+{{ end }}
