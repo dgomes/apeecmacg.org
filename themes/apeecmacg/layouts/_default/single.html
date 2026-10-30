@@ -5,6 +5,14 @@
   <header><h1 class="entry-title">{{ .Title }}</h1>
     {{ if eq .Type "posts" }}<div class="single-meta"><time datetime="{{ .Date.Format `2006-01-02` }}">{{ partial "date.html" .Date }}</time>{{ range .GetTerms "author" }}<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}{{ range .GetTerms "category" }}<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}</div>{{ end }}
   </header>
+  {{ if eq .RelPermalink "/about/" }}
+    {{ with site.Params.documents }}
+    <section class="association-documents" aria-labelledby="statutes-title">
+      <h2 id="statutes-title">Estatutos da associação</h2>
+      <p><a href="{{ .statutesURL | relURL }}">{{ .statutesLabel }}</a></p>
+    </section>
+    {{ end }}
+  {{ end }}
   <div class="entry-content">{{ .Content }}</div>
   {{ if or .Params.guide .Params.guide_index }}{{ partial "guide-navigation.html" . }}{{ end }}
   {{ if eq .RelPermalink "/classificados/" }}<p><a class="read-more" href="{{ "category/classificados/" | relURL }}">Ver todos os classificados →</a></p>{{ end }}
