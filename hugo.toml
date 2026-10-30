@@ -27,6 +27,14 @@ enableRobotsTXT = true
   email = 'direccao@apeecmacg.org'
   facebook = 'https://www.facebook.com/Apeecmacg/'
 
+[params.membership]
+  url = 'https://docs.google.com/forms/d/e/1FAIpQLSejnrNnZq0Jznq3RW9CO42jPxETceXtGWYrAkoOrfJRF4xPVQ/viewform?usp=sf_link'
+  title = 'Faça parte da associação de pais'
+  description = 'Junte-se à APEECMACG e contribua para uma associação que representa as famílias do Conservatório de Música de Aveiro Calouste Gulbenkian.'
+  label = 'Preencher Formulário de adesão'
+  referenceURL = '/documentos/estatutos-apeecmacg.pdf'
+  referenceLabel = 'Consultar os Estatutos (PDF)'
+
 [[menus.main]]
   name = 'Início'
   url = '/'

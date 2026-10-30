@@ -1,7 +1,8 @@
 {{ define "main" }}
+  {{ partial "membership.html" . }}
   <section class="home-intro" aria-labelledby="welcome-title">
     <p class="eyebrow">A nossa comunidade</p>
-    <h1 id="welcome-title" class="entry-title">Bem-vindos à APEECMACG</h1>
+    <h2 id="welcome-title" class="entry-title">Conheça a APEECMACG</h2>
     <p>{{ site.Params.description }}</p>
     <nav class="topic-grid" aria-label="Conheça a associação">
       {{ range site.Home.Params.shortcuts }}

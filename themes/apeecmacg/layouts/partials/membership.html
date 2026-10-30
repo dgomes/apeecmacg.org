@@ -1,0 +1,10 @@
+{{ with site.Params.membership }}
+<section class="membership-invitation" aria-labelledby="membership-title">
+  <p class="eyebrow">Torne-se sócio</p>
+  <h1 id="membership-title" class="entry-title">{{ .title }}</h1>
+  <p>{{ .description }}</p>
+  <a class="membership-button" href="{{ .url }}">{{ .label }} <span aria-hidden="true">→</span></a>
+  <p class="membership-note">Preencha o formulário de inscrição no Google Forms.</p>
+  <a class="membership-reference" href="{{ .referenceURL | relURL }}">{{ .referenceLabel }}</a>
+</section>
+{{ end }}

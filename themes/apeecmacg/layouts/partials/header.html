@@ -1,6 +1,9 @@
 <header class="site-header">
   <div class="header-top">
     <a class="wordmark" href="{{ site.Home.RelPermalink }}" aria-label="{{ site.Title }} — início">{{ site.Params.shortTitle }}</a>
+    {{ with site.Params.membership }}
+    <a class="membership-button header-membership" href="{{ .url }}">Torne-se sócio <span aria-hidden="true">→</span></a>
+    {{ end }}
     <nav aria-label="Menu principal">
       <ul class="menu">{{ range site.Menus.main }}
         <li><a href="{{ .URL | relURL }}"{{ if eq $.RelPermalink .URL }} aria-current="page"{{ end }}>{{ .Name }}</a></li>

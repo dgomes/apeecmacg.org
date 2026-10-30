@@ -202,3 +202,48 @@ main { min-width: 0; }
 @media (max-width: 760px) {
   .topic-grid { grid-template-columns: 1fr; }
 }
+
+/* Membership stays prominent above the news and on every page. */
+.membership-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 48px;
+  padding: 13px 20px;
+  background: var(--accent);
+  color: #fff;
+  font: 700 13px/1.6 var(--sans);
+  text-align: center;
+  text-decoration: none;
+}
+.membership-button:hover { background: #8e2513; color: #fff; }
+.header-top { flex-wrap: wrap; }
+.header-top nav { flex: 1 0 100%; }
+.header-membership { margin-left: auto; font-size: 12px; }
+.membership-invitation {
+  padding: 30px;
+  margin-bottom: 42px;
+  background: #faf3ee;
+  border-top: 5px solid var(--accent);
+}
+.membership-invitation .eyebrow { color: var(--accent); }
+.membership-invitation .entry-title { margin-bottom: 18px; }
+.membership-invitation > p:not(.eyebrow) { font-size: 14px; }
+.membership-invitation .membership-note { margin: 12px 0 18px; color: var(--muted); font-size: 11px; }
+.membership-reference { font: 400 12px/1.7 var(--sans); }
+.footer-membership { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px solid var(--line); }
+.footer-membership h2 { margin: 0 0 8px; font: 700 18px/1.5 var(--sans); }
+.footer-membership div > a { font: 400 12px/1.7 var(--sans); }
+@media (max-width: 1100px) {
+  .header-top { flex-direction: row; align-items: center; }
+}
+@media (max-width: 760px) {
+  .membership-invitation { padding: 24px 20px; }
+  .membership-invitation .membership-button, .footer-membership .membership-button { width: 100%; }
+  .header-top { gap: 18px 12px; }
+  .header-membership { padding: 10px 12px; font-size: 11px; }
+}
+@media print {
+  .footer-membership { display: none; }
+}

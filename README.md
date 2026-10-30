@@ -86,3 +86,9 @@ WordPress image-proxy URLs now use local originals. One duplicated Google Forms 
 ## Contributions
 
 Use focused commits and include build/validation results. Include desktop/mobile screenshots for visual changes. Do not commit the generated `public/` directory or the source ZIP. See [AGENTS.md](AGENTS.md) for contributor guidance and [theme documentation](themes/apeecmacg/README.md) for reuse.
+
+### Membership and reference documents
+
+The header, homepage invitation, and footer direct visitors to the membership Google Form. Maintain the shared destination, homepage copy, and statutes link in `[params.membership]` in `hugo.toml`. These additions live in the theme and are preserved when the archive migration is rerun.
+
+The published reference PDF is `static/documentos/estatutos-apeecmacg.pdf`, served at `/documentos/estatutos-apeecmacg.pdf`. It is an unchanged copy of the supplied Estatutos and matches the archived document, whose legacy URL remains available.
