@@ -1,0 +1,122 @@
+{
+  "period": "2026/2027",
+  "source": "APEECMACG - assembleia 2026.pptx",
+  "slides": [
+    20,
+    21,
+    22
+  ],
+  "groups": [
+    {
+      "title": "Mesa da Assembleia Geral",
+      "members": [
+        {
+          "name": "Joana Barata",
+          "image": "/images/corpos-sociais-2026-2027/joana-barata.jpg",
+          "sourceImage": "ppt/media/image17.jpg",
+          "role": "Presidente"
+        },
+        {
+          "name": "Susana Melo",
+          "image": "/images/corpos-sociais-2026-2027/susana-melo.jpg",
+          "sourceImage": "ppt/media/image18.jpg",
+          "role": "1.ª Secretária"
+        },
+        {
+          "name": "Sofia Dias",
+          "image": "/images/corpos-sociais-2026-2027/sofia-dias.jpg",
+          "sourceImage": "ppt/media/image19.jpg",
+          "role": "2.º Secretário"
+        }
+      ]
+    },
+    {
+      "title": "Conselho Executivo",
+      "members": [
+        {
+          "name": "Margarida Dunões",
+          "image": "/images/corpos-sociais-2026-2027/margarida-dunoes.jpg",
+          "sourceImage": "ppt/media/image20.jpg",
+          "role": "Presidente"
+        },
+        {
+          "name": "Diogo Gomes",
+          "image": "/images/corpos-sociais-2026-2027/diogo-gomes.jpg",
+          "sourceImage": "ppt/media/image21.jpg",
+          "role": "Vice-presidente"
+        },
+        {
+          "name": "Luísa Santos",
+          "image": "/images/corpos-sociais-2026-2027/luisa-santos.jpg",
+          "sourceImage": "ppt/media/image22.jpg",
+          "role": "Tesoureira"
+        },
+        {
+          "name": "Paula Pinheiro",
+          "image": "/images/corpos-sociais-2026-2027/paula-pinheiro.jpg",
+          "sourceImage": "ppt/media/image23.jpg",
+          "role": "Secretária"
+        },
+        {
+          "name": "Miriam Reis",
+          "image": "/images/corpos-sociais-2026-2027/miriam-reis.jpg",
+          "sourceImage": "ppt/media/image24.jpg",
+          "role": "1.º Vogal"
+        },
+        {
+          "name": "Roberto Martins",
+          "image": "/images/corpos-sociais-2026-2027/roberto-martins.jpg",
+          "sourceImage": "ppt/media/image25.jpg",
+          "role": "2.º Vogal"
+        },
+        {
+          "name": "Gil Campos",
+          "image": "/images/corpos-sociais-2026-2027/gil-campos.jpg",
+          "sourceImage": "ppt/media/image26.jpg",
+          "role": "3.º Vogal"
+        },
+        {
+          "name": "Catarina Silva",
+          "image": "/images/corpos-sociais-2026-2027/catarina-silva.jpg",
+          "sourceImage": "ppt/media/image27.jpg",
+          "role": "4.º Vogal"
+        },
+        {
+          "name": "Patrícia Araújo",
+          "image": "/images/corpos-sociais-2026-2027/patricia-araujo.jpg",
+          "sourceImage": "ppt/media/image28.jpg",
+          "role": "5.º Vogal"
+        },
+        {
+          "name": "Maria João Carvalho",
+          "image": "/images/corpos-sociais-2026-2027/maria-joao-carvalho.jpg",
+          "sourceImage": "ppt/media/image29.jpg",
+          "role": "6.º Vogal"
+        }
+      ]
+    },
+    {
+      "title": "Conselho Fiscal",
+      "members": [
+        {
+          "name": "Ricardo Mascarenhas",
+          "image": "/images/corpos-sociais-2026-2027/ricardo-mascarenhas.jpg",
+          "sourceImage": "ppt/media/image30.jpg",
+          "role": "Presidente"
+        },
+        {
+          "name": "Gustavo Tavares",
+          "image": "/images/corpos-sociais-2026-2027/gustavo-tavares.jpg",
+          "sourceImage": "ppt/media/image31.jpg",
+          "role": "1.º Vogal"
+        },
+        {
+          "name": "Andreia Carvalho",
+          "image": "/images/corpos-sociais-2026-2027/andreia-carvalho.jpg",
+          "sourceImage": "ppt/media/image32.jpg",
+          "role": "2.ª Vogal"
+        }
+      ]
+    }
+  ]
+}

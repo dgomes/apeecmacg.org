@@ -13,7 +13,16 @@
     </section>
     {{ end }}
   {{ end }}
-  <div class="entry-content">{{ .Content }}</div>
+  {{ if eq .RelPermalink "/about/" }}
+    <p>{{ site.Params.description }}</p>
+    {{ partial "people.html" . }}
+    <details class="association-history">
+      <summary>Apresentação e organograma anteriores (arquivo de 2020–2022)</summary>
+      <div class="entry-content">{{ .Content }}</div>
+    </details>
+  {{ else }}
+    <div class="entry-content">{{ .Content }}</div>
+  {{ end }}
   {{ if or .Params.guide .Params.guide_index }}{{ partial "guide-navigation.html" . }}{{ end }}
   {{ if eq .RelPermalink "/classificados/" }}<p><a class="read-more" href="{{ "category/classificados/" | relURL }}">Ver todos os classificados →</a></p>{{ end }}
   {{ if eq .Type "posts" }}<nav class="post-navigation" aria-label="Outras publicações">{{ $related := partial "news-pages.html" . }}{{ if in .Params.category "Classificados" }}{{ $related = (where site.RegularPages "Params.category" "intersect" (slice "Classificados")).ByDate.Reverse }}{{ end }}{{ with $related.Prev . }}<a href="{{ .RelPermalink }}"><span>Mais recente</span>{{ .Title }}</a>{{ end }}{{ with $related.Next . }}<a href="{{ .RelPermalink }}"><span>Anterior</span>{{ .Title }}</a>{{ end }}</nav>{{ end }}

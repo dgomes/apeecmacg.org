@@ -248,3 +248,19 @@ main { min-width: 0; }
 @media print {
   .footer-membership { display: none; }
 }
+
+.association-people { margin: 35px 0 45px; }
+.association-people h2 { font: 700 24px/1.4 var(--sans); }
+.people-group { margin-top: 32px; }
+.people-group h3 { font: 700 17px/1.5 var(--sans); border-top: 3px solid var(--accent); padding-top: 16px; }
+.people-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 20px; list-style: none; padding: 0; margin: 24px 0 0; }
+.person { text-align: center; min-width: 0; }
+.person img { display: block; width: 100%; height: auto; aspect-ratio: 207 / 191; object-fit: contain; margin-bottom: 14px; }
+.person h4 { margin: 0 0 5px; font: 700 13px/1.6 var(--sans); overflow-wrap: anywhere; }
+.person p { margin: 0; font: 400 12px/1.6 var(--sans); color: var(--muted); }
+.association-history { border-top: 1px solid var(--line); padding-top: 22px; }
+.association-history summary { cursor: pointer; font: 700 13px/1.7 var(--sans); }
+.association-history .entry-content { margin-top: 25px; }
+@media (max-width: 480px) {
+  .people-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; }
+}

@@ -92,3 +92,7 @@ Use focused commits and include build/validation results. Include desktop/mobile
 The header, homepage invitation, and footer direct visitors to the membership Google Form. Maintain the shared destination and homepage copy in `[params.membership]` in `hugo.toml`. The separate “Estatutos da associação” section on “Sobre nós” uses `[params.documents]` for reference documents. These additions live in the theme and are preserved when the archive migration is rerun.
 
 The published reference PDF is `static/documentos/estatutos-apeecmacg.pdf`, served at `/documentos/estatutos-apeecmacg.pdf`. It is an unchanged copy of the supplied Estatutos and matches the archived document, whose legacy URL remains available.
+
+### Corpos sociais
+
+`data/people.json` lists the 16 members for 2026/2027, their roles, and the original photo asset from slides 20–22 of the supplied assembly presentation. Photos extracted unchanged from the PPTX live in `static/images/corpos-sociais-2026-2027/`. Edit this data for future updates. The “Sobre nós” template renders the members separately from the imported content, which remains available in a labelled historical archive disclosure, including the 2022 organogram. Reimporting the web archive preserves the current members.

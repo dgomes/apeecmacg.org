@@ -1,0 +1,19 @@
+{{ with hugo.Data.people }}
+<section class="association-people" aria-labelledby="people-title">
+  <h2 id="people-title">Corpos sociais {{ .period }}</h2>
+  {{ range .groups }}
+  <section class="people-group" aria-labelledby="{{ .title | anchorize }}">
+    <h3 id="{{ .title | anchorize }}">{{ .title }}</h3>
+    <ul class="people-grid">
+      {{ range .members }}
+      <li class="person">
+        <img src="{{ .image | relURL }}" alt="{{ .name }}" width="207" height="191" loading="lazy">
+        <h4>{{ .name }}</h4>
+        <p>{{ .role }}</p>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
+</section>
+{{ end }}
