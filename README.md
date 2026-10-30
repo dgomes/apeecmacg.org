@@ -89,6 +89,6 @@ Use focused commits and include build/validation results. Include desktop/mobile
 
 ### Membership and reference documents
 
-The header, homepage invitation, and footer direct visitors to the membership Google Form. Maintain the shared destination, homepage copy, and statutes link in `[params.membership]` in `hugo.toml`. These additions live in the theme and are preserved when the archive migration is rerun.
+The header, homepage invitation, and footer direct visitors to the membership Google Form. Maintain the shared destination and homepage copy in `[params.membership]` in `hugo.toml`. The separate footer section “Documentos da associação” uses `[params.documents]` for reference documents. These additions live in the theme and are preserved when the archive migration is rerun.
 
 The published reference PDF is `static/documentos/estatutos-apeecmacg.pdf`, served at `/documentos/estatutos-apeecmacg.pdf`. It is an unchanged copy of the supplied Estatutos and matches the archived document, whose legacy URL remains available.

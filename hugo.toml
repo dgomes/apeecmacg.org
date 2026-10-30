@@ -32,8 +32,10 @@ enableRobotsTXT = true
   title = 'Faça parte da associação de pais'
   description = 'Junte-se à APEECMACG e contribua para uma associação que representa as famílias do Conservatório de Música de Aveiro Calouste Gulbenkian.'
   label = 'Preencher Formulário de adesão'
-  referenceURL = '/documentos/estatutos-apeecmacg.pdf'
-  referenceLabel = 'Consultar os Estatutos (PDF)'
+
+[params.documents]
+  statutesURL = '/documentos/estatutos-apeecmacg.pdf'
+  statutesLabel = 'Consultar os Estatutos (PDF)'
 
 [[menus.main]]
   name = 'Início'

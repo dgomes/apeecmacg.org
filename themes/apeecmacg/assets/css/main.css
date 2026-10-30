@@ -231,10 +231,11 @@ main { min-width: 0; }
 .membership-invitation .entry-title { margin-bottom: 18px; }
 .membership-invitation > p:not(.eyebrow) { font-size: 14px; }
 .membership-invitation .membership-note { margin: 12px 0 18px; color: var(--muted); font-size: 11px; }
-.membership-reference { font: 400 12px/1.7 var(--sans); }
 .footer-membership { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px solid var(--line); }
 .footer-membership h2 { margin: 0 0 8px; font: 700 18px/1.5 var(--sans); }
-.footer-membership div > a { font: 400 12px/1.7 var(--sans); }
+.footer-documents { margin-bottom: 30px; }
+.footer-documents h2 { font: 700 14px/1.5 var(--sans); margin: 0 0 12px; }
+.footer-documents a { font: 400 12px/1.7 var(--sans); }
 @media (max-width: 1100px) {
   .header-top { flex-direction: row; align-items: center; }
 }
